@@ -7,15 +7,26 @@ import styles from './index.scss';
 class Home extends Component{
     constructor(props) {
         super(props);
+        this.state = {
+            msg: ''
+        };
+        ['handleChange'].forEach((t) => {this[t] = this[t].bind(this);});
     }
     
-    render(){
+    render() {
         let {showChangeLogModal} = this.props;
         return (
             <div className={styles.div}>
-               {showChangeLogModal && 'home'}
+               <div>{showChangeLogModal && 'home'}</div>
+               <div>{this.state.msg}</div>
+               <input onChange={this.handleChange} ref="input"/>
             </div>
         )
+    }
+
+    handleChange() {
+        let _val = this.refs.input.value;
+        this.setState({msg: _val})
     }
 
     fetchTest() { 
@@ -33,7 +44,7 @@ class Home extends Component{
 
     componentDidMount() {
         this.props.changeShowChangeLogModalState(true);
-        this.fetchTest();
+        //this.fetchTest();
         //this.props.redirect('/main/sub');
     }
 

@@ -88,6 +88,6 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin("css/[name].[hash:8].css")
-  ],
+  ]
 
 }
