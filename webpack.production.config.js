@@ -12,7 +12,7 @@ var paths = {
 
 module.exports = {
   entry: {
-    app: "./main.js",
+    app: "./src/main.js",
     vender: ['react', 'react-dom', 'redux', 'react-redux', 'react-router']
   },
   output: {
@@ -62,7 +62,7 @@ module.exports = {
   
   plugins: [
     new HtmlWebpackPlugin({
-      template: __dirname + "/index.html",
+      template: __dirname + "/src/index.html",
       inject: 'body',
       minify: {
         minifyCSS: true,
