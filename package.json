@@ -35,7 +35,7 @@
     "webpack-dev-server": "1.16.2"
   },
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.js",
+    "dev": "NODE_ENV=development && webpack-dev-server --config webpack.config.js",
     "build": "rm -rf build && NODE_ENV=production webpack --config ./webpack.production.config.js --progress"
   },
   "author": "",

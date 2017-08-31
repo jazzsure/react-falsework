@@ -15,7 +15,7 @@ const routeConfig = {
   path: '/',
   component: App,
   indexRoute: {
-    component: Login
+      component: Login
   },
   childRoutes: [{
       path: '/main',

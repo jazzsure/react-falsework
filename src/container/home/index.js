@@ -26,7 +26,7 @@ class Home extends Component{
 
     handleChange() {
         let _val = this.refs.input.value;
-        this.setState({msg: _val})
+        this.setState({msg: _val});
     }
 
     fetchTest() { 
