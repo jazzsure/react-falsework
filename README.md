@@ -1,5 +1,5 @@
 * prepare
-ii
+
     npm install
 
 * start
