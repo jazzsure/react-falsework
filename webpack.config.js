@@ -70,11 +70,22 @@ module.exports = {
 
   devServer: {
     contentBase: "./public",//本地服务器所加载的页面所在的目录
-    stats: 'errors-only',
+    //stats: 'errors-only',
     colors: true,//终端中输出结果为彩色
     historyApiFallback: true,//不跳转
     inline: true,//实时刷新
-    port: "8088",
-    hot :true
+    host: '0.0.0.0', 
+    port: "8866",
+    historyApiFallback: true,
+    hot :true,
+    proxy: {
+      '/zsapi/*': {
+        target: 'https://api.douban.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/zsapi/': ''
+        }
+      }
+    }
   } 
 }

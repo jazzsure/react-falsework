@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {mainActions} from '../../actions/index.js';
 import styles from './index.scss';
+import $ from 'jquery';
 
 class Home extends Component{
     constructor(props) {
@@ -27,24 +28,41 @@ class Home extends Component{
     handleChange() {
         let _val = this.refs.input.value;
         this.setState({msg: _val});
+        this.fetchTest();
     }
 
     fetchTest() { 
-        fetch("http://localhost:3000/123/456")
-        .then(response =>{ 
-            if(response.ok){ 
-                return response.json().then(json => ({ json, response })) 
-            } else {
-                return Promise.reject(response)
-            }
-        }).catch(error => {
-            return Promise.reject(error);
-        });
+        // $.post(
+        //     "/api",
+        //     { method: "POST",body :{author: 'ddd', comment: "hello", email: '', comment_post_ID: 1000}},
+        //     (response)=>{
+                
+        //     }
+        // )
+        fetch('/zsapi/v2/book/1220562')  //填写路径即可
+          .then(function(response) {
+
+          }).then(function(json) {
+            //console.log('json==', json)
+            //console.log('parsed json', json)
+          }).catch(function(ex) {
+            //console.log('parsing failed', ex)
+          })
+        // fetch("http://www.dandyweng.com/post-comment.php", { method: "POST",body :{author: 'ddd', comment: "hello", email: '', comment_post_ID: 1000}})
+        // .then(response =>{ 
+        //     if(response.ok){ 
+        //         return response.json().then(json => ({ json, response })) 
+        //     } else {
+        //         return Promise.reject(response)
+        //     }
+        // }).catch(error => {
+        //     return Promise.reject(error);
+        // });
     }
 
     componentDidMount() {
         this.props.changeShowChangeLogModalState(true);
-        //this.fetchTest();
+        this.fetchTest();
         //this.props.redirect('/main/sub');
     }
 
