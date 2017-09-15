@@ -1,6 +1,5 @@
 import React , { Component } from 'react'
-import styles from './app.scss'
-
+import commonCss from "./common.css";
 class App extends Component{
     constructor(props) {
         super(props);
