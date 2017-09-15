@@ -1,5 +1,5 @@
 import React , { Component } from 'react'
-
+import styles from './sub.scss'
 class SubMain extends Component{
     constructor(props) {
         super(props);
