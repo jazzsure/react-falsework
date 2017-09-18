@@ -47,7 +47,18 @@ class Home extends Component{
             //console.log('parsed json', json)
           }).catch(function(ex) {
             //console.log('parsing failed', ex)
-          })
+          });
+
+        fetch('/api/123/456')  //填写路径即可
+          .then(function(response) {
+            console.log('response==', response);
+          }).then(function(json) {
+             console.log('json=======', json)
+            //console.log('json==', json)
+            //console.log('parsed json', json)
+          }).catch(function(ex) {
+            //console.log('parsing failed', ex)
+          });
         // fetch("http://www.dandyweng.com/post-comment.php", { method: "POST",body :{author: 'ddd', comment: "hello", email: '', comment_post_ID: 1000}})
         // .then(response =>{ 
         //     if(response.ok){ 
